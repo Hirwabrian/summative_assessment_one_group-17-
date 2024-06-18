@@ -1,0 +1,249 @@
+/* Hidden tab style */
+.tab {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Active tab style */
+.tab.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+/* Custom font faces */
+@font-face {
+    font-family: 'graffiti1';
+    src: url(graffiti2.ttf);
+}
+@font-face {
+    font-family: 'graffiti';
+    src: url(Throwupz-z7vX.ttf);
+}
+@font-face {
+    font-family: 'graffiti2';
+    src: url(DIEDIEDI.TTF);
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body style */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    font-family: "graffiti", sans-serif;
+}
+/* RAPUP element style */
+.rapup {
+    position: absolute;
+    font-family: "graffiti1", sans-serif;
+    color: #ff9900; 
+    font-size: 24px; 
+    z-index: 100; 
+}
+
+/* Header style */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+/* Logo style */
+.logo {
+    font-size: 6em;
+    color: #3e0161;
+    font-family: "graffiti", sans-serif;
+    user-select: none;
+    font-weight: bolder;
+}
+
+/* Navigation link style */
+.nav a {
+    position: relative;
+    font-size: 3em;
+    text-decoration: none;
+    font-family: "graffiti2", sans-serif;
+    font-weight: 1000;
+    margin-left: 40px;
+    color: #3e0161;
+}
+
+/* Navigation link hover effect */
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0px;
+    width: 100%;
+    height: 3px;
+    background: rgb(255, 156, 7);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.nav a:hover:after {
+    transform: scaleX(1); 
+}
+
+/* Login button style */
+.nav .login-btn {
+    padding: 10px 15px;
+    font-weight: 900;
+    font-size: 40px;
+    background: transparent;
+    color: #31003d;
+    border: 2px;
+    border-radius: 10px;
+    outline: none;
+    font-family: "graffiti2", sans-serif;
+    cursor: pointer;
+    transition: .5s;
+    margin-left: 28px;
+}
+.nav .login-btn:hover {
+    color: rgb(255, 139, 7);
+}
+
+/* Popup wrapper style */
+.wrapper {
+    position: relative;
+    width: 500px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #f3e8e8;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    font-family: "graffiti2", sans-serif;
+    color: #f3e8e8;
+    font-weight: 500;
+    font-size: 33px;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease;
+}
+
+/* Active popup wrapper */
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+/* Active tab inside wrapper */
+.wrapper .tab.active {
+    width: 100%;
+    padding: 40px;
+}
+
+/* Close button style */
+.close {
+    position: absolute;
+    top: -20px; 
+    left: 405px; 
+    cursor: pointer; 
+}
+
+/* Tab heading style */
+.tab h2 {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+/* Input box style */
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Input box label style */
+.input-box label {
+    position: absolute;
+    top: -33px;
+    left: 5px;
+    color: #f3e8e8;
+    pointer-events: none;
+    transition: 0.5s;
+    font-size: 29px;
+}
+
+/* Input field style */
+.input-box input {
+    width: 100%;
+    padding: 10px 20px 20px 40px;
+    margin-bottom: 18px;
+    background: transparent;
+    border: 1px solid #f3e8e8;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.5s;
+    color: #f3e8e8;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Input box icon style */
+.input-box .icon {
+    position: absolute;
+    left: 10px;
+    top: 43%;
+    transform: translateY(-50%);
+    color: #f3e8e8;
+    font-size: 28px;
+}
+
+/* Focused or valid input label style */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    font-size: 33px;
+    color: #e79806;
+}
+
+
+/* Remember me checkbox style */
+.remember-me {
+    margin: -10px 0 30px;
+    font-size: 22px;
+}
+
+/* Submit button style */
+input:checked ~ .btn-submit {
+    background-color: red;
+}
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: #eaece9;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.5s;
+    font-family: "graffiti2", sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+}
+.btn-submit:hover {
+    background: #e79806;
+}
