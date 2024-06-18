@@ -86,4 +86,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     generateRandomRapup();
+
+// click event to show the popup form
+    const wrapper = document.querySelector('.wrapper');
+    const btnpopup = document.querySelector('.login-btn');
+    btnpopup.addEventListener('click', () => {
+        wrapper.classList.add('active-popup');
+        switchTab('form-box');
+    });
+
+    // click event to close the popup form
+    const iclose = document.querySelector('.close');
+    iclose.addEventListener('click', () => {
+        wrapper.classList.remove('active-popup');
+    });
+
+    // Function to switch tabs in the popup form
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+    }
+
+    // handle switch if form is valid
+    const form = document.getElementById('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const isValidForm = validateForm();
+        if (isValidForm) {
+            switchTab('preferences');
+        }
+    });
+
+    // Handle preferences form submission
+    const preferencesForm = document.getElementById('preferencesForm');
+    preferencesForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert('Preferences saved!');
+        wrapper.classList.remove('active-popup');
+    });
+
+    // Handle click event to hide the error modal
+    const okbtn = document.getElementById('okbtn');
+    okbtn.addEventListener('click', () => {
+        document.getElementById('modal').style.visibility = 'hidden';
+    });
+
     
