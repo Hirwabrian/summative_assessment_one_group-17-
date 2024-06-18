@@ -64,9 +64,34 @@
             </form>
         </div>
         
-        <!-- Preferences tab -->
+        <!-- Preferences tab --><!-- Preferences tab -->
+        <div id="preferences" class="tab">
+            <h2>Preferences</h2>
+            <form id="preferencesForm">
+                <label for="topics">Topics of Interest(optional):</label>
+                <div class="checkbox-group">
+                    <!-- Checkbox options for topics of interest -->
+                    <label><input type="checkbox" > MF DOOM biography</label>
+                    <label><input type="checkbox" > Playlists</label>
+                    <label><input type="checkbox" > Latest news</label>
+                    <label><input type="checkbox" > Unrealesed work</label>
+                    <label><input type="checkbox" > Art</label>
+                </div>
+                <!-- Save preferences button -->
+                <button type="submit" class="btn-pref">Save Preferences</button>
+            </form>
+        </div>
         
         <!-- Modal for error messages -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="errorM" class="message"></div>
+                    <button id="okbtn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- JavaScript files -->
     <script src="script.js"></script>
