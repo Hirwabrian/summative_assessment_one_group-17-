@@ -132,5 +132,67 @@ document.addEventListener("DOMContentLoaded", () => {
     okbtn.addEventListener('click', () => {
         document.getElementById('modal').style.visibility = 'hidden';
     });
+     
+    // Function to validate the subscription form
+    function validateForm() {
+        const firstName = document.getElementById('fname').value;
+        const lastName = document.getElementById('lname').value;
+        const passwordInput = document.getElementById('Password');
+        const messageElement = document.getElementById('errorM');
+        const password = passwordInput.value;
 
-    
+        let isValid = true;
+        let errorMessages = [];
+
+        if (!validatefName(firstName)) {
+            errorMessages.push('First name should contain letters only.');
+            isValid = false;
+        }
+
+        if (!validatelName(lastName)) {
+            errorMessages.push('Last name should contain letters only.');
+            isValid = false;
+        }
+
+        if (!validatePassword(password)) {
+            errorMessages.push('Password must be at least 8 characters long and include at least one number, one uppercase letter, one lowercase letter, and one special character.');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            showError(errorMessages.join('<br>'));
+        }
+
+        return isValid;
+    }
+
+    // Function to validate the password
+    function validatePassword(password) {
+        let minLength = 8;
+        let hasNumber = /\d/.test(password);
+        let hasUpper = /[A-Z]/.test(password);
+        let hasLower = /[a-z]/.test(password);
+        let hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        return password.length >= minLength && hasNumber && hasUpper && hasLower && hasSpecial;
+    }
+
+    // Function to validate the first name
+    function validatefName(name) {
+        const nameRegex = /^[a-zA-Z]+$/;
+        return nameRegex.test(name);
+    }
+
+    // Function to validate the last name
+    function validatelName(name) {
+        const nameRegex = /^[a-zA-Z]+$/;
+        return nameRegex.test(name);
+    }
+
+    // Function to show an error message in a modal
+    function showError(message) {
+        const errorMessage = document.getElementById('errorM');
+        const modal = document.getElementById('modal');
+        errorMessage.innerHTML = message;
+        modal.style.visibility = 'visible';
+    }
+});
