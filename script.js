@@ -12,10 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Add mouseover event listener to elements with class "login-btn"
-    const logins = document.querySelectorAll(".login-btn");
-    logins.forEach((login) => {
-        login.addEventListener('mouseover', shuffleanimation);
+    const subs = document.querySelectorAll(".login-btn");
+    subs.forEach((sub) => {
+        sub.addEventListener('mouseover', shuffleanimation);
     });
+
 
     // Function to generate a random character
     function randomchar() {
