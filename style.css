@@ -36,6 +36,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Body style */
 body {
     display: flex;
@@ -45,7 +46,9 @@ body {
     background-position: center;
     padding-top: 100px;
     font-family: "graffiti", sans-serif;
+    background: url(./images/mfdoom.jpg);
 }
+
 /* RAPUP element style */
 .rapup {
     position: absolute;
@@ -245,8 +248,9 @@ input:checked ~ .btn-submit {
     font-size: 35px;
 }
 .btn-submit:hover {
-  background: #e79806;
+    background: #e79806;
 }
+
 /* Preferences button style */
 .btn-pref {
     width: 100%;
